@@ -1,1 +1,1 @@
-# amazon_productchatbot_STC
+# amazon_product_chatbot_STC
