@@ -15,25 +15,6 @@
 
 **Transform your Product reviews into actionable insights with AI-powered analysis.**
 
-## Table of Contents
-- [Visual Demo](#visual-demo)
-  - [](#employee-attrition-dashboard)
-- [Overview](#overview)
-- [Data Source & Dictionary](#data-source--dictionary)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Required Libraries](#required-libraries)
-- [How to Run](#how-to-run)
-- [Key Insights](#key-insights)
-- [Project Structure](#project-structure)
-- [Results](#results)
-- [Author & Acknowledgments](#author--acknowledgments)
-- [License](#license)
-
-## Visual Demo
-![Demo 1](demo/Dashboard.gif)
-
-
 ## Overview
 
 The Amazon Review Analysis Chatbot is an intelligent web application that transforms raw Amazon review data into meaningful business insights. Built with Streamlit and powered by advanced AI technologies, this tool enables:
@@ -46,10 +27,25 @@ The Amazon Review Analysis Chatbot is an intelligent web application that transf
 
 Perfect for e-commerce managers, product analysts, and customer experience teams seeking data-driven decision making.
 
-## Data Source & Dictionary
+## Data Dictionary
 
-**Data Dictionary (Key Columns)**  
-
+**Original  Columns**  
+- product_id: Unique identifier for each product
+- product_name: Full name of the product
+- category: Product category (can include multiple levels separated by "
+- discounted_price: Price after applying the discount
+- actual_price: Original price before discount
+- discount_percentage: Discount as a percentage
+- rating: Average product rating
+- rating_count: Total number of ratings received
+- about_product: Short product description
+- user_id: Unique identifier of the reviewer
+- user_name: Name of the reviewer
+- review_id: Unique ID of the review
+- review_title:Title or summary of the review
+- review_content: Full text of the review
+- img_link: Link to the product image
+- product_link: Link to the product page
 
 
 ## Features of the Chatbot
@@ -131,7 +127,15 @@ Perfect for e-commerce managers, product analysts, and customer experience teams
 To run this project, you need to install the following Python packages:
 
 ```bash
-pip install 
+pip install numpy
+pip install panda
+pip install torch
+pip install torchvision
+pip install torchaudio
+pip install torchtext
+pip install torchdata
+pip install faiss
+pip install groq
 ```
 
 
@@ -159,12 +163,17 @@ Open your web browser and navigate to `http://127.0.0.1:8050/`
 
 
 ## Key Insights
-
+1. Distribution of Ratings: Almost all product are rated between 3.5 to 4.5
+2. Discount % vs. Rating: No clear trend between Discount % vs. Rating
+3. Sentiment Distribution: Most data were predicted py the sentiment model to be 4 or 5
+4. Discounted Price vs. Actual Price : there is a notable positive correlation
+5. Rating Count vs. Rating: products with high rating count usually fall in the 4 to 4.5 rating range
 
 ## Project Structure
 ```text
 ├── src/
 │   │── app.py
+│   │── gamma3.py
 │   └── .streamlit 
 ├── data/
 │   │── amazon_product_reviews.xlsx # Original data
@@ -187,8 +196,6 @@ Open your web browser and navigate to `http://127.0.0.1:8050/`
 └── README.md             # Project documentation
 ```
 
-## Results
-
 
 ## Author & Acknowledgments
 
@@ -196,8 +203,6 @@ Open your web browser and navigate to `http://127.0.0.1:8050/`
 - Waref Alyousef
 
 ### Acknowledgments:
-
-
 I gratefully acknowledge the dataset provider for making this data accessible for analysis and learning.
 
 ## License
